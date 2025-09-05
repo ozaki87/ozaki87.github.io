@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>It's Dan's Fault</title>
+  <meta name="description" content="Submit your problems. Dan will review them. It is his fault anyway."/>
+  <style>
+    :root{
+      --bg1:#0f172a; --bg2:#1e293b; --accent:#22d3ee; --accent2:#a78bfa;
+      --text:#e2e8f0; --muted:#94a3b8; --card:#0b1224ee;
+      --ok:#34d399; --warn:#fbbf24; --oops:#f87171;
+    }
+    body{
+      margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.06) 0 2px, transparent 2px) 0 0/24px 24px,
+        radial-gradient(circle at 70% 40%, rgba(255,255,255,.04) 0 2px, transparent 2px) 0 0/32px 32px,
+        linear-gradient(120deg, var(--bg1), var(--bg2));
+      min-height:100svh; display:grid; place-items:center; overflow-x:hidden;
+    }
+    .glow{position:fixed; inset:-40vmax;
+      background:radial-gradient(closest-side, rgba(167,139,250,.15), transparent 60%),
+                 radial-gradient(closest-side, rgba(34,211,238,.13), transparent 60%);
+      filter:blur(60px); animation:float 18s ease-in-out infinite; pointer-events:none;}
+    @keyframes float{0%{transform:translate3d(-4%,-3%,0) rotate(0)}50%{transform:translate3d(4%,2%,0) rotate(5deg)}100%{transform:translate3d(-4%,-3%,0) rotate(0)}}
+    .wrap{width:min(900px,92vw); text-align:center;}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:22px;
+      padding:28px clamp(18px,4vw,40px); box-shadow:0 20px 60px rgba(0,0,0,.4); backdrop-filter:blur(6px);}
+    h1{font-size:clamp(34px,6vw,56px); line-height:1.05; margin:0 0 10px; letter-spacing:.2px;}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; font-size:14px;
+      color:#0b1224; background:linear-gradient(90deg,var(--accent),var(--accent2)); font-weight:700; text-transform:uppercase; letter-spacing:.6px;}
+    p.lede{color:var(--muted); font-size:clamp(16px,2.6vw,20px); margin:12px 0 22px;}
+    .one-liners{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:18px 0 24px;}
+    .chip{border:1px solid rgba(255,255,255,.12); color:var(--text); border-radius:999px; padding:8px 12px; font-size:14px; background:rgba(255,255,255,.03);}
+    .cta-row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:10px;}
+    .btn{cursor:pointer; border:none; border-radius:14px; padding:14px 18px; font-size:16px; font-weight:700;
+      transition:transform .08s ease, box-shadow .08s ease, opacity .2s ease;
+      color:#04101f; background:linear-gradient(90deg,var(--accent),var(--accent2)); box-shadow:0 10px 30px rgba(34,211,238,.2); text-decoration:none; display:inline-flex; align-items:center; gap:10px;}
+    .btn:hover{transform:translateY(-1px)} .btn:active{transform:translateY(0)}
+    .btn.ghost{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.14); box-shadow:none;}
+    .status{display:flex; gap:10px; justify-content:center; margin-top:18px; font-size:14px; color:var(--muted);}
+    .dot{width:9px; height:9px; border-radius:50%; display:inline-block;} .ok{background:var(--ok)} .warn{background:var(--warn)} .oops{background:var(--oops)}
+    footer{margin:20px 0 10px; text-align:center; color:var(--muted); font-size:13px;}
+    a.inline{color:var(--accent); text-decoration:none;} a.inline:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <div class="card">
+      <span class="tag">It’s Dan’s Fault</span>
+      <h1>Submit your problems here</h1>
+      <p class="lede">
+        Car will not start. Cat knocked over a drink. Printer jammed on page one again. 
+        Whatever went sideways, Dan is reviewing submissions and accepting responsibility with a smile.
+      </p>
+
+      <div class="one-liners" id="liners">
+        <span class="chip">Coffee was involved. Case closed</span>
+        <span class="chip">If it worked yesterday that was yesterday</span>
+        <span class="chip">Have you tried snacks and patience</span>
+        <span class="chip">Dog ate the homework. Cat filed the report</span>
+        <span class="chip">Button was pressed with confidence if not accuracy</span>
+      </div>
+
+      <div class="cta-row">
+        <!-- Change the email address below -->
+        <a class="btn" href="mailto:help@itsdansfault.com?subject=New%20Problem%20for%20Dan&body=Tell%20Dan%20what%20happened%3A%0A%0ASteps%20to%20reproduce%3A%0AExpected%20result%3A%0AActual%20result%3A%0AImpact%3A">
+          Email your problem
+        </a>
+        <a class="btn ghost" href="#" onclick="alert('Swap this for a form link when ready'); return false;">
+          Use the form
+        </a>
+      </div>
+
+      <div class="status">
+        <span><span class="dot ok"></span> Site up</span>
+        <span><span class="dot warn"></span> Sarcasm set to medium</span>
+        <span><span class="dot oops"></span> Dan on call</span>
+      </div>
+    </div>
+	<section class="donate">
+  <h2>Tip Jar</h2>
+  <p class="lede small">
+    Blame is free. Coffee is not. If this page helped or made you laugh, fuel Dan’s accountability engine.
+  </p>
+
+  <div class="donate-links">
+    <!-- Replace URLs with your real links -->
+    <a class="btn small" href="https://www.buymeacoffee.com/itsdansfault" target="_blank" rel="noopener">Buy Me a Coffee ☕</a>
+    <a class="btn ghost small" href="https://paypal.me/YOURNAME" target="_blank" rel="noopener">PayPal 💸</a>
+    <a class="btn ghost small" href="https://ko-fi.com/YOURNAME" target="_blank" rel="noopener">Ko-fi 🍩</a>
+    <a class="btn ghost small" href="https://cash.app/$YourCashTag" target="_blank" rel="noopener">$Cash App</a>
+    <a class="btn ghost small" href="https://venmo.com/u/YourVenmo" target="_blank" rel="noopener">@Venmo</a>
+  </div>
+
+  <p class="tiny">
+    Tip policy: tips do not skip the line. They may increase coffee which might increase typing speed.
+  </p>
+</section>
+
+    <footer>
+      © <span id="year"></span> itsdansfault.com 
+    </footer>
+  </main>
+
+  <script>
+    // Rotate friendly one liners that are not just tech
+    const lines = [
+      "Lost the TV remote again. Dan approves a couch search",
+      "Salad fell on the floor. Five second rule debated",
+      "Car keys hid themselves in a very creative place",
+      "Microwave asked for more time. So did Monday",
+      "Weather app said maybe. It was correct",
+      "Spilled coffee achieved record distance",
+      "Meeting could have been an email. Dan is brave enough to say it",
+      "Kids created modern art on the wall",
+      "Laundry will be folded when physics allows",
+      "Cooked rice turned into a life lesson"
+    ];
+    const liners = document.getElementById("liners");
+    setInterval(() => {
+      const idx = Math.floor(Math.random()*lines.length);
+      const node = document.createElement("span");
+      node.className = "chip";
+      node.textContent = lines[idx];
+      liners.insertBefore(node, liners.firstChild);
+      if (liners.children.length > 6) liners.removeChild(liners.lastChild);
+    }, 3200);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
